@@ -9,8 +9,8 @@ function _saveState() {
 
 
 class NotesService {
-  setActiveNote(caseId) {
-    let selectedNote = AppState.notes.find(n => n.id == caseId)
+  setActiveNote(noteId) {
+    let selectedNote = AppState.notes.find(n => n.id == noteId)
     console.log(selectedNote)
     AppState.activeNote = selectedNote
     console.log('active-note', AppState.activeNote)
@@ -34,6 +34,11 @@ class NotesService {
     console.log(AppState.notes)
     _saveState()
   }
+
+  removeNote(noteId) {
+    console.log("checking this is working :D", noteId);
+  }
+
 
 }
 

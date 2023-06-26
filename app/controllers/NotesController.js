@@ -40,10 +40,15 @@ export class NotesController {
     AppState.on('activeNote', _drawActiveNote)
 
   }
+  async removeNote(noteData) {
+    if (await Pop.confirm('Are you sure you want to delete?'))
+      notesService.removeNote(noteData)
 
-  setActiveNote(caseId) {
-    console.log('showing active note', caseId)
-    notesService.setActiveNote(caseId)
+  }
+
+  setActiveNote(noteId) {
+    console.log('showing active note', noteId)
+    notesService.setActiveNote(noteId)
 
   }
 
@@ -57,11 +62,6 @@ export class NotesController {
   }
 
 
-  async removeNote(noteId) {
-    if (await Pop.confirm('Are you sure you want to delete?'))
-      notesService.removeNote(noteId)
-
-  }
 }
 
 

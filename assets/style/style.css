@@ -1,6 +1,15 @@
 /* BASIC STYLES HERE */
 
 textarea {
-  width: 80%;
+  width: 100%;
+  min-height: 60dvh;
+}
+
+.new-note {
+  border: 5px solid black;
+  background-color: white;
+}
+
+.note-list {
   min-height: 60dvh;
 }

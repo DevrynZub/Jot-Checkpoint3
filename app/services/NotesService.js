@@ -16,11 +16,11 @@ class NotesService {
     console.log('active-note', AppState.activeNote)
   }
 
-  saveCase(newContent) {
-    const theNote = AppState.activeNote
-    theNote.report = newContent
-    // debugger
-    // console.log(AppState.cases, AppState.activeCase)
+  saveNote(updatedNote) {
+    const currentNote = AppState.activeNote
+    currentNote.report = updatedNote
+    debugger
+    console.log(AppState.notes, AppState.activeNote)
     _saveState()
   }
   createNote(noteData) {
@@ -35,8 +35,12 @@ class NotesService {
     _saveState()
   }
 
-  removeNote(noteId) {
-    console.log("checking this is working :D", noteId);
+  removeNote(noteData) {
+    console.log("checking this is working", noteData);
+    let filteredArray = AppState.notes.filter(n => n.id != noteData)
+    AppState.notes = filteredArray
+    console.log('New array in AppState:', AppState.notes);
+    saveState('notes', AppState.notes)
   }
 
 

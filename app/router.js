@@ -11,10 +11,10 @@ export const router = [
     controller: NotesController,
     view: /*html*/`
     <div class="container-fluid">
-      <div class="row">
-      <div class="col-4">
+      <div class="row m-none">
+      <div class="col-4 bg-info text-white note-list">
       <section id="note-count"></section>
-      <h5><span id="note-list"><span>Saved Note List</h5>
+      <h5 class="mt-4"><span id="note-list"><span></h5>
       </div>
       <div class="col-8" id="active-note"></div>
       </div>

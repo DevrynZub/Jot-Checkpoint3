@@ -19,11 +19,11 @@
   <!-- SECTION -->
   <header>
     <nav class="navbar navbar-dark navbar-expand bg-dark text-light no-select">
-      <a class="navbar-brand ms-3" href="#">
+      <a class="navbar-brand" href="#">
         <img
           src="https://images.unsplash.com/photo-1616628188540-925618b98318?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
           height="45" alt="" loading="lazy">
-        <span class="ms-2"></span>
+        <span class="">JOT</span>
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
         aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -52,11 +52,11 @@
 
   <div class="container-fluid">
     <section class="row">
-      <div class="col-4">
+      <div class="col-4 new-note">
 
-        <form onsubmit="app.NotesController.createNote(event)" class="row align-items-end">
-          <div class=" col-5">
-            <label for="noteName" class="form-label">Note</label>
+        <form onsubmit="app.NotesController.createNote(event)" class="row align-items-end mb-3">
+          <div class=" col-4">
+            <label for="noteName" class="form-label">Note Name</label>
             <input type="text" minlength="3" maxlength="15" required class="form-control" name="name" id="note-content"
               aria-describedby="" placeholder="note name">
           </div>
@@ -64,10 +64,8 @@
             <label for="exampleColorInput" class="form-label">Color picker</label>
             <input type="color" class="form-control form-control-color" id="exampleColorInput" value="#563d7c"
               title="Choose your color" name="color">
-
           </div>
           <div class=" col-1 ms-5" title="create note">
-
             <button class="btn btn-outline-success">Create
             </button>
 

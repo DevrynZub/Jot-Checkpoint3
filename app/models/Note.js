@@ -14,7 +14,10 @@ export class Note {
 
 
   get NoteTemplate() {
-    return `<p class="selectable" onclick="app.NotesController.setActiveNote('${this.id}')">${this.name}<i class="mdi mdi-note" style="color:${this.color};"></i></p>`
+    return `<p class="selectable" onclick="app.NotesController.setActiveNote('${this.id}')">${this.name}<i class="mdi mdi-note" style="color:${this.color};"></i></p>
+    <p class="">Created on: ${this.createdDate.toLocaleDateString()}</p>
+    <p class="">Updated on: ${this.reportedDate}</p>
+    <button onclick="app.NotesController.removeNote('${this.id}')" class="btn btn-danger mdi mdi-delete"></button>`
   }
 
   get ActiveTemplate() {
@@ -22,7 +25,6 @@ export class Note {
     // textarea name="description"
     // render the date in some format that's not the isostring (toLocaleDateString())
     return `
-    <p>${this.createdDate.toLocaleDateString()}</p>
     <form onsubmit="app.NotesController.saveNote(this.id)">
     <textarea id="note-content" >${this.description}</textarea>
     <button>Save Note</button>

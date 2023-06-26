@@ -16,10 +16,18 @@ class NotesService {
     console.log('active-note', AppState.activeNote)
   }
 
-  saveNote(updatedNote) {
+  saveNote(noteDescription) {
+    console.log(noteDescription);
     const currentNote = AppState.activeNote
-    currentNote.report = updatedNote
-    debugger
+    currentNote.description = noteDescription.description
+    currentNote.reportedDate = new Date()
+
+    const index = AppState.notes.findIndex(n => n.id == currentNote.id)
+    console.log(index);
+    AppState.notes.splice(index, 1, currentNote)
+    AppState.emit('notes')
+
+    // debugger
     console.log(AppState.notes, AppState.activeNote)
     _saveState()
   }

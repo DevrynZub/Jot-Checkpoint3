@@ -57,10 +57,17 @@ export class NotesController {
     const form = event.target
     // log form data
     let noteData = getFormData(form)
-    console.log(noteData)
+    console.log('this is the noteData from the textarea', noteData)
     notesService.createNote(noteData)
   }
 
+  saveNote(noteId) {
+    event.preventDefault()
+    const form = event?.target
+    let noteData = getFormData(form)
+    console.log(noteData);
+    notesService.saveNote(noteData)
+  }
 
 }
 

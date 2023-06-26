@@ -1,15 +1,39 @@
-import { AppState } from "../AppState.js";
-import { Note } from "../models/Note";
-import { saveState } from "../utils/Store";
+import { AppState } from "../AppState.js"
+import { Note } from "../models/Note.js"
+import { saveState } from "../utils/Store.js"
+
+
+function _savedState() {
+  saveState('notes', AppState.notes)
+}
 
 
 class NotesService {
-  setActiveNote() {
-    const selectedNote = AppState.notes.find(note => note.title == note)
-    console.log('note service selected', selectedNote);
-
-    AppState.activeNote
+  setActiveNote(caseId) {
+    let selectedNote = AppState.notes.find(n => n.id == caseId)
+    console.log(selectedNote)
+    AppState.activeNote = selectedNote
+    console.log('active-note', AppState.activeNote)
   }
 
 
+
+  // saveNote(newRecords) {
+  //   const theNotes = AppState.activeNote
+  //   theNotes.description = newRecords
+  //   // debugger
+  //   _savedState()
+  // }
+
+  createNote(formData) {
+    const newNote = new Note(formData)
+    AppState.notes = [...AppState.notes, newNote]
+    saveState('notes', AppState.notes)
+
+  }
+
 }
+
+
+
+export const notesService = new NotesService()

@@ -15,26 +15,26 @@ class ObservableAppState extends EventEmitter {
 
   notes = [
     new Note({
-      title: 'History Class',
-      Data: Date(),
-      note: "History class notes, let see if we can get this to show up",
+      name: "History Class",
+      Date: Date(),
+      description: "History class notes, let see if we can get this to show up",
     }),
     new Note({
-      title: 'English Class',
-      Data: Date(),
-      note: "History class notes, let see if we can get this to show up",
+      name: "English Class",
+      Date: Date(),
+      description: "History class notes, let see if we can get this to show up",
     }),
     new Note({
-      title: 'Math Class',
-      Data: Date(),
-      note: "History class notes, let see if we can get this to show up"
-    })
-
+      name: "Math Class",
+      Date: Date(),
+      description: "History class notes, let see if we can get this to show up"
+    }),
   ]
 
 
 
-  note = null
+
+  activeNote = null
 
 
 
@@ -47,6 +47,7 @@ class ObservableAppState extends EventEmitter {
 
   // NOTE Used to load initial data
   init() {
+    this.notes = loadState('notes', [Note])
 
   }
 

@@ -13,11 +13,12 @@ export const router = [
     <div class="container-fluid">
       <div class="row">
       <div class="col-4 bg-dark text-white">
-      <h3><span id="note-list"><span>Note List</h3>
+      <section id="note-count"></section>
+      <h5><span id="note-list"><span>Saved Note List</h5>
       </div>
-      <div class="col-6" id="active-note">Test</div>
+      <div class="col-8" id="active-note"></div>
       </div>
     </div>
     `
-  },
+  }
 ]

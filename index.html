@@ -31,7 +31,7 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-          <!-- NAVLINKS -->
+
         </div>
       </div>
     </nav>
@@ -41,13 +41,43 @@
   <main class="container-fluid" id="router-view">
     <!-- PRIMARY VIEWPORT -->
     <section class="row">
-      <div class="col-12">
+      <div class="col-4">
 
       </div>
     </section>
 
     <!-- CanvasForm -->
   </main>
+
+
+  <div class="container-fluid">
+    <section class="row">
+      <div class="col-4">
+
+        <form onsubmit="app.NotesController.createNote('${this.id}')" class="row align-items-end">
+          <div class=" col-5">
+            <label for="noteTitle" class="form-label">Note</label>
+            <input type="text" minlength="3" maxlength="15" required class="form-control" name="notes" id="note-content"
+              aria-describedby="" placeholder="note name">
+          </div>
+          <div class=" col-5">
+            <label for="" class="form-label">Reported Date</label>
+            <input type="date" class="form-control" required name="reportedDate" id="noteReportedDate"
+              aria-describedby="reportedDate" placeholder="reported date">
+          </div>
+          <div class=" col-1" title="create note">
+            <button class="btn btn-outline-success">Create
+            </button>
+
+
+
+          </div>
+
+        </form>
+
+      </div>
+    </section>
+  </div>
 
   <!-- SECTION -->
   <footer>

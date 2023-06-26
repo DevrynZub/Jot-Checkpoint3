@@ -3,7 +3,7 @@ import { Note } from "../models/Note.js"
 import { saveState } from "../utils/Store.js"
 
 
-function _savedState() {
+function _saveState() {
   saveState('notes', AppState.notes)
 }
 
@@ -16,20 +16,23 @@ class NotesService {
     console.log('active-note', AppState.activeNote)
   }
 
+  saveCase(newContent) {
+    const theNote = AppState.activeNote
+    theNote.report = newContent
+    // debugger
+    // console.log(AppState.cases, AppState.activeCase)
+    _saveState()
+  }
+  createNote(noteData) {
+    const newNote = new Note(noteData)
+    console.log(newNote)
+
+    AppState.notes.push(newNote)
+    AppState.emit('notes')
 
 
-  // saveNote(newRecords) {
-  //   const theNotes = AppState.activeNote
-  //   theNotes.description = newRecords
-  //   // debugger
-  //   _savedState()
-  // }
-
-  createNote(formData) {
-    const newNote = new Note(formData)
-    AppState.notes = [...AppState.notes, newNote]
-    saveState('notes', AppState.notes)
-
+    console.log(AppState.notes)
+    _saveState()
   }
 
 }

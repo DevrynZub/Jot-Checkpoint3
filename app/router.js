@@ -12,7 +12,7 @@ export const router = [
     view: /*html*/`
     <div class="container-fluid">
       <div class="row">
-      <div class="col-4 bg-dark text-white">
+      <div class="col-4">
       <section id="note-count"></section>
       <h5><span id="note-list"><span>Saved Note List</h5>
       </div>

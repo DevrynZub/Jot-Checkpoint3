@@ -16,17 +16,14 @@ class ObservableAppState extends EventEmitter {
   notes = [
     new Note({
       name: "History Class",
-      Date: Date(),
       description: "History class notes, let see if we can get this to show up",
     }),
     new Note({
       name: "English Class",
-      Date: Date(),
       description: "History class notes, let see if we can get this to show up",
     }),
     new Note({
       name: "Math Class",
-      Date: Date(),
       description: "History class notes, let see if we can get this to show up"
     }),
   ]

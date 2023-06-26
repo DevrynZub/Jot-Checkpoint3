@@ -1,8 +1,6 @@
 import { AppState } from "../AppState.js";
 import { setHTML, setText } from "../utils/Writer.js";
 import { notesService } from "../services/NotesService.js";
-import { Note } from "../models/Note.js";
-import { Pop } from "../utils/Pop.js";
 import { getFormData } from "../utils/FormHandler.js";
 
 function _drawNoteList() {
@@ -47,11 +45,11 @@ export class NotesController {
   }
 
   createNote() {
-    event?.preventDefault()
-    let form = event?.target
-    const formData = getFormData(form)
-    console.log(formData);
-    notesService.createNote(formData)
+    event.preventDefault()
+    const form = event.target
+    let noteData = getFormData(form)
+    console.log(noteData)
+    notesService.createNote(noteData)
   }
 }
 
